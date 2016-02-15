@@ -13,6 +13,8 @@
 		D4F67C231C721673007811C9 /* SQLiteSandboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F67C221C721673007811C9 /* SQLiteSandboxTests.swift */; };
 		D4F67C2E1C721673007811C9 /* SQLiteSandboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F67C2D1C721673007811C9 /* SQLiteSandboxUITests.swift */; };
 		D4F67C3D1C7216C2007811C9 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = D4F67C3B1C7216C2007811C9 /* Cartfile */; };
+		D4F67C411C7218F9007811C9 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F67C401C7218F9007811C9 /* SQLite.framework */; };
+		D4F67C421C7218F9007811C9 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4F67C401C7218F9007811C9 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D4F67C431C7218F9007811C9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D4F67C421C7218F9007811C9 /* SQLite.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		D4F67C0F1C721673007811C9 /* SQLiteSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQLiteSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F67C121C721673007811C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +63,7 @@
 		D4F67C3B1C7216C2007811C9 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		D4F67C3C1C7216C2007811C9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D4F67C3F1C7217B3007811C9 /* SQLiteSandbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SQLiteSandbox.entitlements; sourceTree = "<group>"; };
+		D4F67C401C7218F9007811C9 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/Mac/SQLite.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4F67C411C7218F9007811C9 /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +95,7 @@
 		D4F67C061C721673007811C9 = {
 			isa = PBXGroup;
 			children = (
+				D4F67C401C7218F9007811C9 /* SQLite.framework */,
 				D4F67C3B1C7216C2007811C9 /* Cartfile */,
 				D4F67C3C1C7216C2007811C9 /* README.md */,
 				D4F67C111C721673007811C9 /* SQLiteSandbox */,
@@ -136,6 +155,7 @@
 				D4F67C0B1C721673007811C9 /* Sources */,
 				D4F67C0C1C721673007811C9 /* Frameworks */,
 				D4F67C0D1C721673007811C9 /* Resources */,
+				D4F67C431C7218F9007811C9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,7 +216,7 @@
 						CreatedOnToolsVersion = 7.2;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -393,8 +413,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = SQLiteSandbox/SQLiteSandbox.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = SQLiteSandbox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tylingsoft.SQLiteSandbox;
@@ -406,8 +429,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = SQLiteSandbox/SQLiteSandbox.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = SQLiteSandbox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tylingsoft.SQLiteSandbox;

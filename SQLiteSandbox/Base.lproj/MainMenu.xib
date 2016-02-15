@@ -681,6 +681,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="choose:" target="Voe-Tx-rLC" id="u0X-js-aff"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Oea-qn-SPN">
                         <rect key="frame" x="0.0" y="14" width="256" height="32"/>
@@ -688,6 +691,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="save:" target="Voe-Tx-rLC" id="wEQ-6T-mig"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
