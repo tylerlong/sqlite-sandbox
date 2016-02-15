@@ -46,6 +46,7 @@
 		D4F67C2F1C721673007811C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4F67C3B1C7216C2007811C9 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		D4F67C3C1C7216C2007811C9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D4F67C3F1C7217B3007811C9 /* SQLiteSandbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SQLiteSandbox.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,7 @@
 		D4F67C111C721673007811C9 /* SQLiteSandbox */ = {
 			isa = PBXGroup;
 			children = (
+				D4F67C3F1C7217B3007811C9 /* SQLiteSandbox.entitlements */,
 				D4F67C121C721673007811C9 /* AppDelegate.swift */,
 				D4F67C141C721673007811C9 /* Assets.xcassets */,
 				D4F67C161C721673007811C9 /* MainMenu.xib */,
@@ -192,6 +194,11 @@
 				TargetAttributes = {
 					D4F67C0E1C721673007811C9 = {
 						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					D4F67C1D1C721673007811C9 = {
 						CreatedOnToolsVersion = 7.2;
@@ -386,6 +393,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SQLiteSandbox/SQLiteSandbox.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SQLiteSandbox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -398,6 +406,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SQLiteSandbox/SQLiteSandbox.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SQLiteSandbox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
